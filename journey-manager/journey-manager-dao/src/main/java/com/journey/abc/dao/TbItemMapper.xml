@@ -82,7 +82,7 @@
   </sql>
   <sql id="Blob_Column_List" >
     contect_desc
-  </sql>
+</sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.journey.abc.pojo.po.TbItemExample" >
     select
     <if test="distinct" >
@@ -90,7 +90,6 @@
     </if>
     <include refid="Base_Column_List" />
     ,
-    <include refid="Blob_Column_List" />
     from tb_item
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

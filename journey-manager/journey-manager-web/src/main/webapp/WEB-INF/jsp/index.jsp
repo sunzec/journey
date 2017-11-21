@@ -11,7 +11,10 @@
 <body class="easyui-layout">
 
 <div data-options="region:'north'" style="height:70px;padding-left:20px;">
-    <h2>XX旅游后台管理系统</h2>
+    <h2>FG旅游后台管理系统</h2>
+    <div id="tm">
+
+    </div>
 </div>
 
 <div data-options="region:'south'" style="padding:2px;background:#eee;">
@@ -22,9 +25,7 @@
     <div id="menu" class="easyui-accordion">
         <div title="订单管理" data-options="selected:true,iconCls:'icon-tip'" style="padding:10px 0;">
             <ul class="easyui-tree">
-                <li data-options="attributes:{'href':'item-add'}">新增订单</li>
                 <li data-options="attributes:{'href':'item-list'}">查询订单</li>
-                <li data-options="attributes:{'href':'item-param-list'}">规格参数</li>
             </ul>
         </div>
         <div title="旅行管理" data-options="selected:true,iconCls:'icon-tip'" style="padding:10px 0;">
@@ -74,7 +75,7 @@
 <div data-options="region:'center'" style="background:#eee;">
     <div id="tab" class="easyui-tabs" data-options="fit:true">
         <div title="欢迎页面" style="padding:20px;">
-             欢迎来到XX旅行后台管理系统
+             欢迎来到FG旅行后台管理系统
             <img src="#">
         </div>
     </div>

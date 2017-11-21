@@ -1,9 +1,16 @@
 package com.journey.abc.dto;
 
+/**
+ * 通用的树节点实体类
+ * User: Frogzec
+ * Date: 2017/11/13
+ * Time: 15:38
+ * Version:V1.0
+ */
 public class TreeNode {
-    private Long id;//节点id
-    private String  text;//节点标题
-    private String state;//节点状态
+    private Long id;
+    private String text;
+    private String state; //状态
 
     public Long getId() {
         return id;

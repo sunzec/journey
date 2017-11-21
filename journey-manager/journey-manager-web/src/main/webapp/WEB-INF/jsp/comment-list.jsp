@@ -116,7 +116,6 @@
     }
 
     $('#tb').datagrid({
-
         url: 'commentsByPage',
         multiSort: true,// 允许多列排序
         pagination: true, //分页栏显示
