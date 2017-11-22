@@ -37,7 +37,6 @@ public class ItemAction {
     @RequestMapping("/items")
     public Result<TbItemCustom> listItemsByPage(Page page, TbItemQuery tbItemQuery)
     {
-
         Result<TbItemCustom> list = null;
         try {
             list = itemService.listItemsByPage(page,tbItemQuery);
@@ -101,11 +100,28 @@ public class ItemAction {
     public String toEdit(Model model , Long id)  {
 //       System.out.println(id);
        //根据id查询订单
-        TbItem item = itemService.getItemByid(id);
-
+        TbItemCustom item = itemService.getItemByid(id);
         model.addAttribute("item",item);
-
         return "item-edit";
    }
 
+    /**
+     * 修改信息
+     * @param
+     * @return
+     */
+   @ResponseBody
+   @RequestMapping(value ="/items/update")
+    public int  updateItemById(TbItem tbItem)
+   {
+       int   i = 0;
+       try {
+           i =itemService.updateItemById(tbItem);
+       }catch (Exception e)
+       {
+           logger.error(e.getMessage(),e);
+           e.printStackTrace();
+       }
+       return i;
+   }
 }

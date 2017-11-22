@@ -133,22 +133,12 @@ public class ItemServiceImpl implements ItemService {
      * @return
      */
     @Override
-    public TbItem getItemByid(Long id) {
+    public TbItemCustom getItemByid(Long id) {
 
-        TbItem item = null;
+        TbItemCustom  item = null;
         try {
-            TbItemExample example = new TbItemExample();
-            TbItemExample.Criteria criteria = example.createCriteria();
-            criteria.andIdEqualTo(id);
-
             //查询
-            List<TbItem> list = itemDao.selectByExample(example);
-
-            if(list.size() > 0)
-            {
-                item = list.get(0);
-            }
-
+              item = itemCustomDao.selectItemByid(id);
         }catch (Exception e)
         {
             logger.error(e.getMessage(),e);
@@ -156,5 +146,26 @@ public class ItemServiceImpl implements ItemService {
         }
 
         return item;
+    }
+
+    @Override
+    public int updateItemById(TbItem item) {
+
+        int  i = 0;
+        try {
+            //修改
+            TbItemExample example = new TbItemExample();
+            TbItemExample.Criteria criteria = example.createCriteria();
+            criteria.andIdEqualTo(item.getId());
+
+
+            i = itemDao.updateByExampleSelective(item, example);
+
+        }catch (Exception e)
+        {
+            logger.error(e.getMessage(),e);
+            e.printStackTrace();
+        }
+        return i;
     }
 }

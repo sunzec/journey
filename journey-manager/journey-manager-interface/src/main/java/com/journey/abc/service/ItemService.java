@@ -29,8 +29,8 @@ public interface ItemService {
     int confirmItemsByIds(List<Long> ids);
 
     //根据ID查询订单
-    TbItem getItemByid(Long id);
+    TbItemCustom getItemByid(Long id);
 
-
-
+    //修改订单
+    int updateItemById(TbItem item);
 }

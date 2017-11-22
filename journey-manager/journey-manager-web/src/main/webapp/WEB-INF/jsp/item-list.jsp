@@ -26,6 +26,8 @@
 <table id="item_table"></table>
 
 <script>
+
+
      //模糊查询
     function searchForm()
     {
@@ -162,7 +164,7 @@
         }
         var id = selectRows[0].id;
         console.log(id)
-        ddshop.addTabs("item-edit","item/edit?id="+id);
+        ddshop.addTabs("修改订单","item/edit?id="+id);
 
     }
 
