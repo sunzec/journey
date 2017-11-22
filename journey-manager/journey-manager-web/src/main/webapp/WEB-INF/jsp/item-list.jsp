@@ -185,7 +185,14 @@
             {field: 'id', title: '订单编号'},
             {field: 'title', title: '订单详情'},
             {field: 'price', title: '订单价格'},
-            {field: 'contectDesc', title: '详细说明'},
+            {field: 'contectDesc', title: '详细说明',formatter:function (value,row,index) {
+                var json = JSON.parse(value);
+                var array=[];
+                $.each(json,function (i,e) {
+                    array.push(e.params)
+                })
+                return array.join("/");
+            }},
             {
                 field: 'created', title: '创建时间', formatter: function (value, row, index) {
                 return moment(value).format("LLL");

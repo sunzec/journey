@@ -33,8 +33,8 @@
             <tr>
                 <td class="label">订单详情：</td>
                 <td>
-                    <input class="easyui-textbox" type="text" id="contectDesc" name="contectDesc"
-                           style="width:100%; " value="${item.contectDesc}" >
+
+                    <textarea id="contectDesc" name="contectDesc" class="easyui-textbox" style="width: 100%; height: 30px" > ${item.contectDesc} </textarea>
                 </td>
             </tr>
 
